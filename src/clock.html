@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./scripts/watch.js" async></script>
+  <title>Тестовое задание</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: #f0f0f0;
+    }
+
+    .clock {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border: 5px solid black;
+      border-radius: 50%;
+      background: white;
+    }
+
+    .hand {
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      width: 2px;
+      background: black;
+      transform-origin: bottom center;
+      transform: rotate(0deg);
+      transition: transform 0.05s linear;
+    }
+
+    .hour-hand {
+      height: 50px;
+      background: black;
+    }
+
+    .minute-hand {
+      height: 70px;
+      background: gray;
+    }
+
+    .second-hand {
+      height: 90px;
+      background: red;
+    }
+
+    .controls {
+      margin-top: 20px;
+    }
+
+    button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="clock">
+    <div class="hand hour-hand"></div>
+    <div class="hand minute-hand"></div>
+    <div class="hand second-hand"></div>
+  </div>
+  <div class="controls">
+    <button id="startBtn">Старт</button>
+    <button id="pauseBtn">Пауза</button>
+  </div>
+</body>
+</html>

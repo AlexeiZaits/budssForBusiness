@@ -1,0 +1,27 @@
+.discount{
+    max-width: 100%;
+    background-color: var(--background-purple);
+    height: max-content;
+    padding: 0;
+}
+
+.discount__list{
+    padding: 40px 13px 40px 16px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    
+    @media (min-width: 767px) {
+        justify-content: center;
+        flex-direction: row;
+    }
+
+}
+
+.discount__text{
+    
+    @media (min-width: 767px) {
+        margin-right: 100px;
+    }
+}

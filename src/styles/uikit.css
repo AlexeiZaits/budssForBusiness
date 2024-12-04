@@ -1,0 +1,107 @@
+@import url(./reset.css);
+@import url(../assets/fonts/stylesheet.css);
+@import url(./typography.css);
+@import url(./components/buttons.css);
+@import url(./components/card.css);
+@import url(./components/cookies.css);
+@import url(./components/discount.css);
+@import url(./components/feature.css);
+@import url(./components/form.css);
+@import url(./components/icons.css);
+@import url(./components/modal.css);
+@import url(./components/thanks.css);
+
+:root {
+    /* Фоновые цвета */
+    --background-dark: #181818;
+    --background-light: #F5F5F5;
+    --background-white: #FFFFFF;
+    --background-white-opacity: rgb(255, 255, 255, 0.5);
+    --background-orange: #FFAA4C;
+    --background-purple: #954CED;
+    --background-purple-opacity: rgb(149,76,237, 0.5);
+    --background-lead-purple: #A64CED;
+    --background-gray: #B9B9B9;
+    --background-gray-opacity: rgb(185,185,185, 0.5);
+
+    /* Цвета текста */
+    --text-black: #000000;
+    --text-soft-black: #383838;
+    --text-lead-black: #444444;
+    --text-white: #FFFFFF;
+    --text-orange: #FFAA4C;
+    --text-purple: #954CED;
+    --text-lead-purple: #A64CED; 
+    --text-green: #2FDBBC;
+    --text-gray: #B9B9B9;
+    
+    /* Цвета эффектов */
+    --button-pressed: #7B31D4;
+    --button-focus: #7B31D4;
+    --input-error: #EC1211;
+    
+    /* Шрифты и общие параметры */
+    --font-family: 'Outfit', sans-serif;
+    --font-icon: "socialicoregular", sans-serif;
+    --border-color: #F1F1F1;
+    --border-main-radius: 1.25rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.devider{
+    margin-top: 50px;
+}
+
+.ui__container {
+    max-width: 1800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.ui_icons{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.ui__icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: max-content;
+
+    @media (min-width: 1024px) {
+        height: auto;
+        width: 50rem;
+        flex-direction: row;
+    }
+}
+
+.logo{
+    width: 124px;
+    height: 39px;
+        
+    @media (min-width: 1024px) {
+        width: 155px;
+        height: 49px;
+    }
+}
+
+.input__sales{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1240px;
+}
+
+.input__sales-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+    width: 400px;
+}

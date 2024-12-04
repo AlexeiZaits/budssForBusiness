@@ -1,0 +1,77 @@
+@import url(../assets/fonts/stylesheet.css);
+@import url(./uikit.css);
+@import url(./layout/about.css);
+@import url(./layout/budss.css);
+@import url(./layout/business.css);
+@import url(./layout/discount.css);
+@import url(./layout/footer.css);
+@import url(./layout/header.css);
+@import url(./layout/hero.css);
+@import url(./layout/phone.css);
+
+:root {
+    /* Фоновые цвета */
+    --background-dark: #181818;
+    --background-light: #F5F5F5;
+    --background-white: #FFFFFF;
+    --background-white-opacity: rgb(255, 255, 255, 0.5);
+    --background-orange: #FFAA4C;
+    --background-purple: #954CED;
+    --background-purple-opacity: rgb(149,76,237, 0.5);
+    --background-lead-purple: #A64CED;
+    --background-gray: #B9B9B9;
+    --background-gray-opacity: rgb(185,185,185, 0.5);
+        
+    /* Цвета текста */
+    --text-black: #000000;
+    --text-soft-black: #383838;
+    --text-lead-black: #444444;
+    --text-white: #FFFFFF;
+    --text-orange: #FFAA4C;
+    --text-purple: #954CED;
+    --text-lead-purple: #A64CED; 
+    --text-green: #2FDBBC;
+    --text-gray: #B9B9B9;
+    
+    /* Цвета эффектов */
+    --button-pressed: #7B31D4;
+    --button-focus: #7B31D4;
+    --input-error: #EC1211;
+
+    /* Шрифты и общие параметры */
+    --font-family: 'Outfit', sans-serif;
+    --font-icon: "socialicoregular", sans-serif;
+    --border-color: #F1F1F1;
+    --border-main-radius: 1.25rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--background-dark);
+}
+
+section{
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+    margin-top: 40px;
+    
+    @media (min-width: 1024px) {
+        margin-top: 100px;
+    }
+
+    @media (min-width: 1440px) {
+        padding: 0;
+    }
+}
+
+.container{
+    max-width: 1320px;
+    margin: 0 auto;
+}

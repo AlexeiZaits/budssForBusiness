@@ -1,0 +1,87 @@
+.hero{
+    display: flex;
+    flex-direction: column;
+    margin-top: 51px;
+    position: relative;
+    
+    @media (min-width: 1024px) {
+        padding-bottom: 140px;
+        display: block;
+        max-width: 100%;
+        margin-top: 82px;
+    }
+}
+
+.hero__descp{
+    max-width: 650px;
+
+    @media (min-width: 1024px) {
+        margin-left: 50px;
+    }
+}
+
+.hero__text{
+    margin-top: 13px;
+}
+
+.hero__button{
+    margin-top: 40px;
+}
+
+.hero__container{
+    height: 100%;
+}
+
+.hero__imgs{
+    position: relative;
+    width: 99%;
+    bottom: 0;
+    
+    @media (min-width: 1024px) {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+    }
+}
+
+.hero__imgs-picture{
+    margin-top: 137px;
+}
+
+.hero__imgs-woman{
+    position: relative;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    margin: 0 auto;
+    align-items: flex-end;
+    margin-top: 137px;
+
+    @media (min-width: 1024px) {
+        margin-top: 0;
+        position: absolute;
+        right: 76.84px;
+        bottom: 0;
+        z-index: 2;
+    }
+}
+
+.hero__imgs-influencer{
+    position: absolute;
+    width: 100%;
+    width: auto;
+    height: auto;
+    bottom: 0;
+    right: -1.2rem;
+    z-index: 1;
+
+    @media (min-width: 1024px) {
+        width: auto;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        position: absolute;
+    }
+
+}

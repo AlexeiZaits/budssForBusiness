@@ -1,0 +1,131 @@
+.nav__button{
+    background-color: inherit;
+    padding: 9px 2.5rem;
+    text-align: center;
+    border-top-left-radius: var(--border-main-radius);
+    border-top-right-radius: var(--border-main-radius);
+    cursor: pointer;
+    border: none;
+    color: var(--text-black);
+}
+
+.nav__button.active {
+    background-color: var(--background-dark);
+    color: var(--text-white);
+}
+
+.button{
+    width: 100%;
+    height: 53px;
+    padding: 12px 26px;
+    border-radius: 16px;
+    border: 4px solid;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    
+    @media (min-width: 1024px) {
+        max-width: max-content;
+    }
+}
+
+.button.primary .loader {
+    position: absolute;
+    top: calc(50% - 9px);
+    left: calc(50% - 9px);
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--background-white-opacity); 
+    border-top: 2px solid var(--background-white);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: none;
+    animation: spin 2s linear infinite;
+}
+
+.button.secondary .loader {
+    position: absolute;
+    top: calc(50% - 9px);
+    left: calc(50% - 9px);
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--background-purple-opacity); 
+    border-top: 2px solid var(--background-purple); 
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: none;
+    animation: spin 2s linear infinite;
+}
+  
+.button.loading .loader {
+    display: block; 
+}
+
+.button.loading .button-text {
+    visibility: hidden; 
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.button.primary{
+    border-color: var(--background-purple);
+    background-color: var(--background-purple);
+    
+    &:hover{
+        border-color: var(--background-dark);
+        background-color: var(--background-dark);
+    }
+
+    &:active{
+        background-color: var(--button-pressed);
+    }
+
+    &:focus{
+        border-color: var(--button-focus);
+    }
+}
+
+.button.secondary{
+    border: 2px solid;
+    padding: 14px 28px;
+    border-color: var(--background-purple);
+    background-color: inherit;
+    
+    &:hover{
+        background-color: var(--background-purple-opacity)
+    }
+
+    &:active{
+        background-color: var(--button-pressed);
+    }
+}
+
+.button.secondary.unactive{
+    border-color: var(--background-gray);
+    color: var(--text-gray);
+    cursor: not-allowed;
+
+    &:hover {
+        background-color: inherit; 
+    }
+
+}
+
+.button.primary.unactive{
+    border-color: var(--background-gray);
+    background-color: var(--background-gray);
+    cursor: not-allowed;
+
+    &:hover {
+        background-color: var(--background-gray); 
+        border-color: var(--background-gray);
+    }
+
+}

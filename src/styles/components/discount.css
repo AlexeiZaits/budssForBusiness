@@ -1,0 +1,33 @@
+.discount-text{
+    margin-left: 20px;
+
+    @media (min-width: 767px) {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    
+}
+
+.discount-text > br {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .discount-text > br{
+        display: block;
+    }
+}
+
+.discount{
+    display: flex;
+    flex-direction: row;
+    height: 42px;
+    align-items: center;
+    
+    @media (min-width: 767px) {
+        max-width: max-content;
+        align-items: stretch;
+        height: 142px;
+        flex-direction: column;
+    }
+}

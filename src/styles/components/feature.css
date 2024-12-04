@@ -1,0 +1,16 @@
+.feature{
+    max-width: 20rem;
+    word-wrap: break-word;
+    
+    @media (min-width: 1024px) {
+        max-width: 21rem;
+    }
+}
+
+.feature-title{
+    margin-top: 10px;
+}
+
+.feature-text{
+    margin-top: 1.25rem;
+}

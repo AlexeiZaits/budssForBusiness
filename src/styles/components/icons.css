@@ -1,0 +1,111 @@
+.socialicon{
+    border-radius: 226px;
+    background-color: var(--background-purple);
+    position: relative;
+    width: 64px;
+    height: 64px;
+    
+    @media (min-width: 1024px) {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+.icon{
+    display: flex; 
+    align-items: center;
+    width: 100px;
+    height: 100px;
+}
+
+.socialicon__svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.socialicon__svg-facebook{
+    top: 55%;
+    
+    @media (min-width: 1024px) {
+        top: 53.5%;
+    }
+}
+
+.social{
+    font-family: var(--font-icon);
+}
+
+.close__icon {
+    width: 26px; 
+    height: 26px; 
+    background-color: inherit; 
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+.close__container{
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.close__icon::before,
+.close__icon::after {
+    content: '';
+    position: absolute;
+    width: 10px; 
+    height: 1.5px;
+    background-color: var(--background-gray); 
+    border-radius: 1px; 
+}
+
+.close__icon::before {
+    transform: rotate(45deg);
+}
+
+.close__icon::after {
+    transform: rotate(-45deg); 
+}
+
+.close__icon.secondary{
+    width: 40px;
+    height: 40px;
+    
+
+    &::after,
+    &::before{
+        background-color: var(--background-light);
+        width: 24px;
+        height: 2px;
+    }
+}
+
+.menu__icon {
+    width: 45px; 
+    height: 55px; 
+    background-color: inherit;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    gap: 6px;
+    border: none;
+    cursor: pointer;
+}
+  
+.menu__icon span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: var(--background-white); 
+    border-radius: 2px;
+}
