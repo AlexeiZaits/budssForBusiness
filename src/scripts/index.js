@@ -1,19 +1,40 @@
 const initialProject = () => {
     cookiesWithModal.open();
-    const btnOpenForm = document.querySelectorAll(".open__form")
+    handleEventsListener(".open__form")
+    handleEventListener(".open__menu")
+    setYear("timeYear")
+    window.addEventListener('scroll', () => handleScroll(".header__section"));
+}
 
-    btnOpenForm.forEach(btn => {
-        btn.addEventListener("click", () => form.open())
+function handleEventListener(className){
+    const element = document.querySelector(className)
+    element.addEventListener("click", () => menu.open())
+}
+
+function handleEventsListener(className){
+    const elements = document.querySelectorAll(className)
+    
+    elements.forEach(element => {
+        element.addEventListener("click", () => form.open())
     })
-    
-    const btnOpenMenu = document.querySelector(".open__menu")
-    btnOpenMenu.addEventListener("click", () => menu.open())
-    
-    const yearElement = document.getElementById("timeYear");
+}
+
+function setYear(id){
+    const yearElement = document.getElementById(id);
     const now = new Date();
     const year = now.getFullYear();
     yearElement.innerText = year;
+}
+
+function handleScroll(className){
+    const headerSection = document.querySelector(className);
+    const scrollPosition = window.scrollY;
     
+    if (scrollPosition > 100) {
+        headerSection.classList.add('hidden');
+    } else if(scrollPosition < 37) {
+        headerSection.classList.remove('hidden');
+    }
 }
 
 // modal
