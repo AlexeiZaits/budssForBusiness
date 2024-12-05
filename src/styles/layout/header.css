@@ -7,7 +7,7 @@
     padding: 7px 1rem;
     margin-top: 0;
     z-index: 100;
-
+    
     @media (min-width: 1024px) {
         padding: 7px 0;
     }
