@@ -7,15 +7,21 @@
 }
 
 .footer__top{
+    max-width: 1320px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     flex-wrap: wrap;
     gap: 40px 0;
-    margin-top: 0;
+    margin: 0 auto;
+    padding: 0 1rem;
     
     @media (min-width: 1024px) {
         flex-direction: row;
+    }
+
+    @media (min-width: 1440px) {
+        padding: 0;
     }
 }
 
@@ -67,11 +73,18 @@
 }
 
 .footer__bot{
+    max-width: 1320px;
+    margin: 0 auto;
     margin-top: 30px;
     width: 100%;
+    padding: 0 1rem;
 
     @media (min-width: 1024px) {
         margin-top: 25px;
+    }
+
+    @media (min-width: 1440px) {
+        padding: 0;
     }
 }
 
