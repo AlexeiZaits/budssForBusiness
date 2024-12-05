@@ -44,8 +44,6 @@ class Modal {
         this.className = className;
         this.outsideClick = outsideClick
         this.modalElement = null
-        this.buttonSubmit = null
-        this.inputsContainer = null
         this.eventClose = this.handleOutsideClick.bind(this);
     }
     
@@ -109,7 +107,7 @@ const thanksWithModal = new Modal({
                 </div>
                 <p class="ST1 thanks__title">Thank you!</p>
                 <p class="ST3 thanks__description">Thank you, we have received your application and will contact you soon!</p>
-                <button class="ST4 button primary thanks__button close__modal">Super!</button>
+                <button class="ST4 button ligth primary thanks__button close__modal">Super!</button>
             </div>`,
 });
 
@@ -120,8 +118,8 @@ const thanksWithModal = new Modal({
                 <div class="close__container"><button class="close__icon close__modal"></button></div>
                 <p class="ST7 cookies__text">This website uses cookies to ensure you get the best experience on our website. They also allow us to analyze user behavior in order to constantly improve the website for you.</p>
                 <div class="cookies__buttons">
-                    <button  class="ST4 button primary cookies__buttons-accept close__modal">Accept</button>
-                    <button  class="ST4 button primary cookies__buttons-decline close__modal">Decline</button>
+                    <button  class="ST4 button ligth primary cookies__buttons-accept close__modal">Accept</button>
+                    <button  class="ST4 button secondary cookies__buttons-decline close__modal">Decline</button>
                 </div>
             </div>`,
     outsideClick: false,
@@ -164,6 +162,7 @@ class formWithModal extends Modal{
     constructor(modal){
         super(modal)
         this.validateForm = {name: false, email: false, phone: false}
+        this.buttonSubmit = null;
         this.inputsContainer = null;
     }
     
@@ -407,7 +406,7 @@ const form = new formWithModal({
                     </p>
                 </div>
                 <div class="form__button">
-                    <button type="submit" id="buttonSubmit" class="ST4 button primary unactive">Contact sales</button>
+                    <button type="submit" id="buttonSubmit" class="ST4 button ligth primary unactive">Contact sales</button>
                 </div>
             </form>`,
 });

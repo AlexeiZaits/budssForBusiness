@@ -75,12 +75,17 @@
     }
 }
 
+.button.ligth{
+    &:hover{
+        border-color: var(--background-dark);
+    }
+}
+
 .button.primary{
     border-color: var(--background-purple);
     background-color: var(--background-purple);
     
     &:hover{
-        border-color: var(--background-dark);
         background-color: var(--background-dark);
     }
 
@@ -112,9 +117,9 @@
     border-color: var(--background-gray);
     color: var(--text-gray);
     cursor: not-allowed;
-
+    
     &:hover {
-        background-color: inherit; 
+        background-color: inherit !important; 
     }
 
 }

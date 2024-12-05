@@ -43,7 +43,5 @@
 }
 
 .cookies__buttons-decline{
-    background-color: inherit !important;
-    border: var(--background-purple) 2px solid;
     color: var(--text-black);
 }
