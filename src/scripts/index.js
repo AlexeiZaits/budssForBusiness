@@ -105,7 +105,7 @@ const thanksWithModal = new Modal({
     content: `<div class="thanks">
                 <div class="close__container"><button class="close__icon close__modal"></button></div>
                 <div class="thanks__icon">
-                    <img src="./assets/icons/thanks.svg">
+                    <img src="./assets/icons/thanks.svg" alt="thanks">
                 </div>
                 <p class="ST1 thanks__title">Thank you!</p>
                 <p class="ST3 thanks__description">Thank you, we have received your application and will contact you soon!</p>
@@ -377,8 +377,8 @@ const form = new formWithModal({
                 <div id="inputPhoneContainer" class="form__input input">
                     <p class="B3 input__title">Phone number</p>
                     <div class="input__container">
-                        <img class="input__flag" src="./assets/icons/russian-federation.svg">
-                        <input id="inputPhone" name="phone" class="B4 input__field input__field-phone" placeholder="+7 000 000 00 00" type="tel" placeholder="Enter number">
+                        <img class="input__flag" src="./assets/icons/russian-federation.svg alt="flag">
+                        <input id="inputPhone" name="phone" class="B4 input__field input__field-phone" placeholder="+7 000 000 00 00" type="tel">
                         <span class="loader"></span>
                         <p id="inputPhoneError" class="B7 input__error"></p>
                     </div>
