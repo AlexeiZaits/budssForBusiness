@@ -377,7 +377,7 @@ const form = new formWithModal({
                 <div id="inputPhoneContainer" class="form__input input">
                     <p class="B3 input__title">Phone number</p>
                     <div class="input__container">
-                        <img class="input__flag" src="./assets/icons/russian-federation.svg alt="flag">
+                        <img class="input__flag" src="./assets/icons/russian-federation.svg" alt="flag">
                         <input id="inputPhone" name="phone" class="B4 input__field input__field-phone" placeholder="+7 000 000 00 00" type="tel">
                         <span class="loader"></span>
                         <p id="inputPhoneError" class="B7 input__error"></p>
