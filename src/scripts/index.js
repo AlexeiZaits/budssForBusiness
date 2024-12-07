@@ -79,6 +79,7 @@ class Modal {
             this.modalElement.remove();
             this.modalElement = null;
         }
+        
     }
 
     init() {
@@ -130,11 +131,23 @@ const thanksWithModal = new Modal({
 class menuWithModal extends Modal{
     constructor(modal){
         super(modal)
+        this.button = null
     }
     
     init(){
         super.init();
-        this.modalElement.querySelector(".open__form").addEventListener("click", () => this.openForm())
+        this.button = this.modalElement.querySelector(".open__form")
+        this.button.addEventListener("click", this.handleClick);
+        this.button.focus();
+    }
+    
+    handleClick(){
+        this.openForm()
+    }
+
+    close(){
+        super.close();
+        this.button.removeEventListener("click", this.handleClick)
     }
 
     openForm(){
@@ -162,18 +175,18 @@ class formWithModal extends Modal{
     constructor(modal){
         super(modal)
         this.validateForm = {name: false, email: false, phone: false}
+        this.form = null;
         this.buttonSubmit = null;
         this.inputsContainer = null;
+        this.inputs = null;
     }
     
     init(){
         super.init();
         this.buttonSubmit = this.modalElement.querySelector("#buttonSubmit");
         const inputs = ["#inputName", "#inputEmail", "#inputPhone"];
-        
+        this.form = this.modalElement.querySelector("#form");
         this.formError = this.modalElement.querySelector("#formError")
-        this.buttonSubmit.addEventListener("submit", (event) => this.handleSubmit(event))
-        
         this.inputsContainer = inputs.map(item => {
             return {
                 elementError: this.modalElement.querySelector(item+"Error"),
@@ -182,50 +195,41 @@ class formWithModal extends Modal{
                 check: false
             }
         })
-        
-        inputs.forEach(item => {
+
+        this.buttonSubmit.addEventListener("submit", (event) => this.handleSubmit(event))
+        window.addEventListener("keydown", this.handleSubmit)
+        this.inputs = inputs.map((item, index) => {
             const input = this.modalElement.querySelector(item);
+            if (index === 0) input.focus();
             input.addEventListener("input", (event) => this.handleChange(event, item))
             input.addEventListener("blur", (event) => this.handleBlur(event, item))
             input.addEventListener("focus", () => this.handleFocus(item))
-            input.addEventListener("keydown", (event) => {
-                if (event.key === "Enter") this.handleSubmit(event)
-            })
+            input.addEventListener("keydown", (event) => this.handleSubmit(event))
+
+            return input
+        })
+
+    }
+
+    close(){
+        super.close()
+        this.buttonSubmit.removeEventListener("submit", this.handleSubmit)
+        window.removeEventListener("keydown", this.handleSubmit)
+        this.inputs.forEach(item => {
+            item.removeEventListener("input", this.handleChange)
+            item.removeEventListener("blur", this.handleBlur)
+            item.removeEventListener("focus", this.handleFocus)
+            item.removeEventListener("keydown", this.handleSubmit)
         })
     }
     
     setErrorElements(){
-        let check = true;
-
         this.inputsContainer.forEach((item) => {
             if (!item.check){
-                check = false
                 const valueLength = item.elementContainer.querySelector(item.key).value.length;
                 this.setErrorElement(item, valueLength)
             }
         })
-
-        if (!check){
-
-        }
-        
-    }
-    
-    handleSubmit(event){
-        event.preventDefault();
-        
-        if (this.checkValidateForm()){
-            const form = event.target;
-            const formData = new FormData(form);
-            const values = Object.fromEntries(formData.entries());
-            console.log(values)
-            this.close()
-            
-            thanksWithModal.open();
-        } else{
-            this.formError.style.display = "block"
-            this.setErrorElements()
-        }
     }
 
     checkValidateForm(){
@@ -237,6 +241,25 @@ class formWithModal extends Modal{
         this.changeActiveSubmit(check)
 
         return check
+    }
+    
+    handleSubmit(event){
+        if (event.type === "keydown" && event.code !== "Enter"){
+            return
+        }
+        event.preventDefault();
+        
+        if (this.checkValidateForm()){
+            const formData = new FormData(this.form);
+            const values = Object.fromEntries(formData.entries());
+            console.log(values)
+            this.close()
+            
+            thanksWithModal.open();
+        } else{
+            this.formError.style.display = "block"
+            this.setErrorElements()
+        }
     }
     
     setErrorElement(element, length){
@@ -355,7 +378,7 @@ class formWithModal extends Modal{
 
 const form = new formWithModal({
     className: "form",
-    content: `<form onsubmit="form.handleSubmit(event)" class="form">
+    content: `<form id="form" onsubmit="form.handleSubmit(event)" class="form">
                 <div class="close__container"><button class="close__icon close__modal"></button></div>
                 <div id="inputNameContainer" class="form__input input">
                     <p class="B3 input__title">Name</p>
